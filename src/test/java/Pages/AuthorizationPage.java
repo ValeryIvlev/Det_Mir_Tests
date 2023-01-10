@@ -17,8 +17,8 @@ public class AuthorizationPage {
             nameButtonEnterGoogle = "Войти с Google",
             nameButtonEnterApple = "Войти с Apple",
             nameButtonVK = "Войти через VK ID",
-            nameTextEnterGoogle = "Войдите в аккаунт Google",
-            nameTextEnterApple = "Используйте Apple ID для входа в приложение «Детский мир»",
+            nameTextEnterGoogle = "Google",
+            nameTextEnterApple = "Apple ID",
             nameTextEnterVK = "В сервис «Детский мир» можно войти через VK ID";
     private SelenideElement
             buttonEnterRegistration = $("[data-testid=headerLoginBlock]"),
@@ -44,19 +44,19 @@ public class AuthorizationPage {
         return this;
     }
     public AuthorizationPage setEnterGoogle () {
-        step("Google", () -> {
+        step("Выбираем авторизацию с помошью Google", () -> {
         buttonEnterGoogle.click();
         });
         return this;
     }
     public AuthorizationPage setEnterApple () {
-        step("Apple", () -> {
+        step("Выбираем авторизацию с помошью Apple", () -> {
         buttonEnterApple.click();
         });
         return this;
     }
     public AuthorizationPage setEnterVK () {
-        step("VK", () -> {
+        step("Выбираем авторизацию с помошью VK", () -> {
         buttonEnterVK.click();
         });
         return this;
