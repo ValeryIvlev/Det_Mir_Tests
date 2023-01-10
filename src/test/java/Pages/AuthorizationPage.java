@@ -23,8 +23,8 @@ public class AuthorizationPage {
     private SelenideElement
             buttonEnterRegistration = $("[data-testid=headerLoginBlock]"),
             buttonEnterGoogle = $(".M_7").$(new ByText(nameButtonEnterGoogle)),
-            buttonEnterApple = $(".sz").$(new ByText(nameButtonEnterApple)),
-            buttonEnterVK = $(".NE").$(new ByText(nameButtonVK)),
+            buttonEnterApple = $(".M_7").$(new ByText(nameButtonEnterApple)),
+            buttonEnterVK = $(".M_7").$(new ByText(nameButtonVK)),
             textEnterGoogle = $("#initialView"),
             textEnterApple = $("#step"),
             textEnterVK = $(".vkc__PromoBox__promoBox");
