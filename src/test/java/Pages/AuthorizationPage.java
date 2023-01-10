@@ -29,8 +29,6 @@ public class AuthorizationPage {
             textEnterApple = $("#step"),
             textEnterVK = $(".vkc__PromoBox__promoBox");
 
-
-
     public AuthorizationPage openPage() {
         step("Открываем главную страницу", () -> {
         open(baseUrl);
