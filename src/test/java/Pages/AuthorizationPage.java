@@ -44,19 +44,19 @@ public class AuthorizationPage {
         return this;
     }
     public AuthorizationPage setEnterGoogle () {
-        step("Выбираем авторизацию с помошью Google", () -> {
+        step("Google", () -> {
         buttonEnterGoogle.click();
         });
         return this;
     }
     public AuthorizationPage setEnterApple () {
-        step("Выбираем авторизацию с помошью Apple", () -> {
+        step("Apple", () -> {
         buttonEnterApple.click();
         });
         return this;
     }
     public AuthorizationPage setEnterVK () {
-        step("Выбираем авторизацию с помошью VK", () -> {
+        step("VK", () -> {
         buttonEnterVK.click();
         });
         return this;
