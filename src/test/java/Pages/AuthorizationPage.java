@@ -27,7 +27,7 @@ public class AuthorizationPage {
             buttonEnterVK = $(".M_7").$(new ByText(nameButtonVK)),
             textEnterGoogle = $("#initialView"),
             textEnterApple = $("#step"),
-            textEnterVK = $(".vkc__PromoBox__promoBox");
+            textEnterVK = $("#root");
 
 
 
@@ -82,7 +82,7 @@ public class AuthorizationPage {
         return this;
     }
     public AuthorizationPage checkingTextVK () {
-        step("Проверяем успешный переход на форму авторизации Apple", () -> {
+        step("Проверяем успешный переход на форму авторизации VK", () -> {
         textEnterVK.shouldHave(text(nameTextEnterVK));
         });
         return this;
