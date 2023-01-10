@@ -23,17 +23,20 @@ public class OrderPage {
     public static String payWayWithCard = "Картой онлайн";
     private String addressDeliveryDefault = "Ленинский проспект, д 111к1, Москва";
     private String apartmentNumberDefault = "22";
+    private String deliveryNameButton = "Доставка";
+    private String furtherLayoutNameButton = "Далее";
 
 
     private SelenideElement
-    headerMenu = $(".fr"),
-    categoryMenu = $("main.c_0"),
-    buttonCart = $(".f_ .L_9.rO.rJ"),
+    headerMenu = $("#app-container"),
+    categoryMenu = $("h1.oU"),
+    buttonCart = $("[data-testid=headerCartBlock]"),
     inputQuantityProductInCart= $("[data-testid=productQuantityInput]"),
     inputName = $("#name"),
     inputEmail = $("#email"),
     inputPhone = $("#phone"),
-    buttonChoicePay = $(".jj");
+    buttonsChoicePay = $(".jj"),
+    orderLayout = $(".m_");
     public OrderPage openPage() {
         step("Открываем главную страницу", () -> {
         open(baseUrl);
@@ -66,7 +69,7 @@ public class OrderPage {
     }
     public OrderPage addedFirstProductToCart() {
         step("Выбираем первый товар из списка", () -> {
-        $(".uD.uH.uG").$$(".r_5.r_9.uF").first().$(new ByText("В корзину")).click();
+        $(".uC.uG.uF").$$(".ot.ox.uE").first().$(new ByText("В корзину")).click();
         });
         return this;
     }
@@ -84,7 +87,7 @@ public class OrderPage {
     }
     public OrderPage clickOnButtonPlaceAnOrder() {
         step("Кликаем по кнопке оформления заказа", () -> {
-        $(".n_9").$(new ByText("Оформить заказ")).click();
+        orderLayout.$(new ByText("Оформить заказ")).click();
         });
         return this;
     }
@@ -93,32 +96,32 @@ public class OrderPage {
         inputName.sendKeys(newName);
         inputPhone.sendKeys("9"+newPhone);
         inputEmail.sendKeys(newEmail);
-        $(".cB").$(new ByText("Далее")).click();
+        $(".m_").$(new ByText(furtherLayoutNameButton)).click();
         });
         return this;
     }
     public OrderPage deliveryAddressInput() {
         step("Вводим данные для доставки", () -> {
-        $(".bzg").$(new ByText("Доставка")).click();
+        $(".byV").$(new ByText(deliveryNameButton)).click();
         $("#street").sendKeys(addressDeliveryDefault);
         $("#apartment").click();
         $("#apartment").sendKeys(apartmentNumberDefault);
         sleep(1000);
-        $(".bDw").$(new ByText("Далее")).click();
+        $(".bDV").$(new ByText(furtherLayoutNameButton)).click();
         sleep(5000);
         });
         return this;
     }
     public OrderPage approveOrder() {
         step("Подтверждаем заказ", () -> {
-        $(".nP").$(new ByText("Далее")).click();
+        orderLayout.$(new ByText(furtherLayoutNameButton)).click();
         });
         return this;
     }
     public OrderPage payOnline(String wayPay) {
         step("Выбираем способ оплаты", () -> {
-        buttonChoicePay.$(new ByText(wayPay)).click();
-        $(".jp").click();
+        buttonsChoicePay.$(new ByText(wayPay)).click();
+        buttonsChoicePay.$(new ByText("Оплатить онлайн")).click();
         });
         return this;
     }

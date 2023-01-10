@@ -15,9 +15,9 @@ public class SubscriptionPage {
     public static String resultInvalidEmail = "Неверный адрес. Попробуйте другой.";
 
     private SelenideElement
-    userEmailInput = $(".yt"),
-    InfoErrorSubscription = $(".zE"),
-    infoSuccessSubscription = $(".btj");
+    userEmailInput = $("#SubscriptionFormInline-email"),
+    InfoErrorSubscription = $("[role=contentinfo]"),
+    infoSuccessSubscription = $(".bxA");
 
 
     public SubscriptionPage openPage() {

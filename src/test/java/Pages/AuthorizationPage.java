@@ -2,17 +2,18 @@ package Pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.selector.ByText;
+import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
+import static org.openqa.selenium.By.linkText;
 
 public class AuthorizationPage {
 
     private String
-            nameButtonEnterAndRegistration = "Вход и регистрация",
             nameButtonEnterGoogle = "Войти с Google",
             nameButtonEnterApple = "Войти с Apple",
             nameButtonVK = "Войти через VK ID",
@@ -20,9 +21,9 @@ public class AuthorizationPage {
             nameTextEnterApple = "Используйте Apple ID для входа в приложение «Детский мир»",
             nameTextEnterVK = "В сервис «Детский мир» можно войти через VK ID";
     private SelenideElement
-            buttonEnterRegistration = $(".fY").$(new ByText(nameButtonEnterAndRegistration)),
-            buttonEnterGoogle = $(".NE").$(new ByText(nameButtonEnterGoogle)),
-            buttonEnterApple = $(".NE").$(new ByText(nameButtonEnterApple)),
+            buttonEnterRegistration = $("[data-testid=headerLoginBlock]"),
+            buttonEnterGoogle = $(".M_7").$(new ByText(nameButtonEnterGoogle)),
+            buttonEnterApple = $(".sz").$(new ByText(nameButtonEnterApple)),
             buttonEnterVK = $(".NE").$(new ByText(nameButtonVK)),
             textEnterGoogle = $("#initialView"),
             textEnterApple = $("#step"),
