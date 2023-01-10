@@ -19,7 +19,7 @@ public class AuthorizationPage {
             nameButtonVK = "Войти через VK ID",
             nameTextEnterGoogle = "Google",
             nameTextEnterApple = "Apple ID",
-            nameTextEnterVK = "В сервис «Детский мир» можно войти через VK ID";
+            nameTextEnterVK = "VK ID";
     private SelenideElement
             buttonEnterRegistration = $("[data-testid=headerLoginBlock]"),
             buttonEnterGoogle = $(".M_7").$(new ByText(nameButtonEnterGoogle)),
