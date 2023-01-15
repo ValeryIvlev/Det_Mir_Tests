@@ -32,7 +32,7 @@ public class TestBase {
         Configuration.headless = false;
         Configuration.webdriverLogsEnabled = true;
         Configuration.browser = Browsers.CHROME;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);

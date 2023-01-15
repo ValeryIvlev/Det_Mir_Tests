@@ -16,7 +16,7 @@ public class OrderPage {
     FrameComponents frameComponents = new FrameComponents();
     public static String categoryMenuGames = "Игрушки и игры";
     public static String subCategoryBlockConstructors = "Блочные конструкторы";
-    public static String sucCategoryProductNamePupyrka = "Пупырка-антистресс";
+    public static String sucCategoryProductNamePupyrka = "Палатки";
     public static String categoryMenuSportAndRest = "Спорт и отдых";
     public static String headerTextCategoryMenuSportAndRest = "Детские товары для спорта и отдыха\n";
     public static String defaultQuantityProduct = "10";
