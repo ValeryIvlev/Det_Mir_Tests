@@ -47,7 +47,7 @@
 
 <p align="center">
 <img title="Allure Tests" src="images/testsAllure.png">
-</p>a
+</p>
 
 ##  <img src="images/telegram.svg" width="25" height="25"  alt="telegram"/></a>Уведомления в Telegram с использованием бота
 
