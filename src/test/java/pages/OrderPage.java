@@ -83,6 +83,7 @@ public class OrderPage {
     public OrderPage addedQuantityProductInCart(String Quantity) {
         step("Меняем количество товара", () -> {
         inputQuantityProductInCart.sendKeys(Quantity);
+        sleep(2000);
         });
         return this;
     }
