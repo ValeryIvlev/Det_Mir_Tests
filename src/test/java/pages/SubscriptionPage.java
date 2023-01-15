@@ -1,4 +1,4 @@
-package Pages;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
@@ -17,7 +17,7 @@ public class SubscriptionPage {
     private SelenideElement
     userEmailInput = $("#SubscriptionFormInline-email"),
     InfoErrorSubscription = $("[role=contentinfo]"),
-    infoSuccessSubscription = $(".bxA");
+    infoSuccessSubscription = $(".bxx");
 
 
     public SubscriptionPage openPage() {

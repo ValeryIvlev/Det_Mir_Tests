@@ -1,11 +1,11 @@
 package ru.detmir;
 
-import Pages.AuthorizationPage;
-import Pages.OrderPage;
-import Pages.SubscriptionPage;
+import helpers.Attachments;
+import pages.AuthorizationPage;
+import pages.OrderPage;
+import pages.SubscriptionPage;
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -24,7 +24,7 @@ public class TestBase {
     OrderPage orderPage = new OrderPage();
 
     @BeforeAll
-    static void BeforeAll() {
+    static void beforeAll() {
         WebDriverManager.chromedriver().setup();
         Configuration.baseUrl = "https://www.detmir.ru";
         Configuration.browserSize = "1920x1080";
@@ -32,7 +32,7 @@ public class TestBase {
         Configuration.headless = false;
         Configuration.webdriverLogsEnabled = true;
         Configuration.browser = Browsers.CHROME;
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);

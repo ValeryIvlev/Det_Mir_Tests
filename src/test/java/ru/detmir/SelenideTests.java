@@ -4,14 +4,24 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static Pages.OrderPage.*;
-import static Pages.SubscriptionPage.*;
-import static userData.OrderDate.InvalidAddressEmail;
-import static userData.OrderDate.newEmail;
-import static userData.OrderDate.registeredEmail;
+import static pages.AuthorizationPage.*;
+import static pages.OrderPage.*;
+import static pages.SubscriptionPage.*;
+import static userData.OrderDate.*;
 
 public class SelenideTests extends TestBase{
 
+    @Test
+    @DisplayName("Проверка перехода на форму авторизации Apple")
+    @Tag("Prod")
+    void testSwitchingAuthorizationApple() {
+
+        authorizationPage.openPage()
+                .setRegistrationAndEnter()
+                .setEnterButtonAutorization(nameButtonEnterApple)
+                .setSwitchToWindow()
+                .checkingTextAuthorizationApple(nameTextEnterApple);
+    }
     @Test
     @DisplayName("Проверка перехода на форму авторизации Google")
     @Tag("Prod")
@@ -19,31 +29,20 @@ public class SelenideTests extends TestBase{
 
         authorizationPage.openPage()
                 .setRegistrationAndEnter()
-                .setEnterGoogle()
+                .setEnterButtonAutorization(nameButtonEnterGoogle)
                 .setSwitchToWindow()
-                .checkingTextGoogle();
+                .checkingTextAuthorizationGoogle(nameTextEnterGoogle);
     }
-
-    @Test
-    @DisplayName("Проверка перехода на форму авторизации Apple")
-    @Tag("Prod")
-    void testSwitchingAuthorizationApple() {
-        authorizationPage.openPage()
-                .setRegistrationAndEnter()
-                .setEnterApple()
-                .setSwitchToWindow()
-                .checkingTextApple();
-    }
-
     @Test
     @DisplayName("Проверка перехода на форму авторизации VK")
     @Tag("Prod")
-    void testSwitchingAuthorizationVK() {
+    void testSwitchingAuthorizationVk() {
+
         authorizationPage.openPage()
                 .setRegistrationAndEnter()
-                .setEnterVK()
+                .setEnterButtonAutorization(nameButtonEnterVK)
                 .setSwitchToWindow()
-                .checkingTextVK();
+                .checkingTextAuthorizationVK(nameTextEnterVK);
     }
 
     @Test
@@ -75,8 +74,8 @@ public class SelenideTests extends TestBase{
                 .openCart()
                 .addedQuantityProductInCart(defaultQuantityProduct)
                 .clickOnButtonPlaceAnOrder()
-                .personalDataUserInput()
-                .deliveryAddressInput()
+                .personalDataUserInput(newName, newPhone, newEmail)
+                .deliveryAddressInput(addressDeliveryDefault, apartmentNumberDefault)
                 .approveOrder()
                 .payOnline(payWayWithCard)
                 .checkTransitionToSberPay();

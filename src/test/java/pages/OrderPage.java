@@ -1,7 +1,7 @@
-package Pages;
+package pages;
 
 
-import Components.FrameComponents;
+import components.FrameComponents;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.selector.ByText;
 
@@ -21,22 +21,23 @@ public class OrderPage {
     public static String headerTextCategoryMenuSportAndRest = "Детские товары для спорта и отдыха\n";
     public static String defaultQuantityProduct = "10";
     public static String payWayWithCard = "Картой онлайн";
-    private String addressDeliveryDefault = "Ленинский проспект, д 111к1, Москва";
-    private String apartmentNumberDefault = "22";
+    public static String addressDeliveryDefault = "Ленинский проспект, д 111к1, Москва";
+    public static String apartmentNumberDefault = "22";
     private String deliveryNameButton = "Доставка";
     private String furtherLayoutNameButton = "Далее";
 
 
     private SelenideElement
     headerMenu = $("#app-container"),
-    categoryMenu = $("h1.oU"),
+    categoryMenu = $(".cM"),
     buttonCart = $("[data-testid=headerCartBlock]"),
     inputQuantityProductInCart= $("[data-testid=productQuantityInput]"),
     inputName = $("#name"),
     inputEmail = $("#email"),
     inputPhone = $("#phone"),
-    buttonsChoicePay = $(".jj"),
-    orderLayout = $(".m_");
+    buttonsChoicePay = $(".ix"),
+    orderLayout = $(".lU"),
+    deliveryLayout = $(".bzP");
     public OrderPage openPage() {
         step("Открываем главную страницу", () -> {
         open(baseUrl);
@@ -69,7 +70,7 @@ public class OrderPage {
     }
     public OrderPage addedFirstProductToCart() {
         step("Выбираем первый товар из списка", () -> {
-        $(".uC.uG.uF").$$(".ot.ox.uE").first().$(new ByText("В корзину")).click();
+        $(".u_6.va.u_9").$$(".qZ.q_2.u_8").first().$(new ByText("В корзину")).click();
         });
         return this;
     }
@@ -91,23 +92,23 @@ public class OrderPage {
         });
         return this;
     }
-    public OrderPage personalDataUserInput() {
+    public OrderPage personalDataUserInput(String name, String phone, String email) {
         step("Вводим данные клиента", () -> {
-        inputName.sendKeys(newName);
-        inputPhone.sendKeys("9"+newPhone);
-        inputEmail.sendKeys(newEmail);
-        $(".m_").$(new ByText(furtherLayoutNameButton)).click();
+        inputName.sendKeys(name);
+        inputPhone.sendKeys("9"+phone);
+        inputEmail.sendKeys(email);
+        orderLayout.$(new ByText(furtherLayoutNameButton)).click();
         });
         return this;
     }
-    public OrderPage deliveryAddressInput() {
+    public OrderPage deliveryAddressInput(String street, String apartment) {
         step("Вводим данные для доставки", () -> {
-        $(".byV").$(new ByText(deliveryNameButton)).click();
-        $("#street").sendKeys(addressDeliveryDefault);
+        deliveryLayout.$(new ByText(deliveryNameButton)).click();
+        $("#street").sendKeys(street);
         $("#apartment").click();
-        $("#apartment").sendKeys(apartmentNumberDefault);
+        $("#apartment").sendKeys(apartment);
         sleep(1000);
-        $(".bDV").$(new ByText(furtherLayoutNameButton)).click();
+        deliveryLayout.$(new ByText(furtherLayoutNameButton)).click();
         sleep(5000);
         });
         return this;

@@ -1,4 +1,4 @@
-package ru.detmir;
+package helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
