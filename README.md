@@ -27,7 +27,7 @@
 - :white_check_mark: Проверка оформления подписки на скидки
 - :white_check_mark: Проверка оформления подписки на скидки c невалидным e-mail адресом
 
-## <img src="images/Jenkins.svg" width="25" height="25"  alt="Jenkins"/></a> Jenkins job
+## <img src="images/jenkins.svg" width="25" height="25"  alt="jenkins"/></a> Jenkins job
 
 <a target="_blank" href="https://jenkins.autotests.cloud/job/16-javaordie-finalUI">Сборка в Jenkins</a>
 <p align="center">
