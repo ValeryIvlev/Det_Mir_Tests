@@ -58,5 +58,5 @@
 ## <img src="images/selenoid.svg" width="25" height="25"  alt="selenoid"/></a> Видео с прохождением тестов
 
 <p align="center">
-<img title="Selenoid Video" src="images/testVideo.gif" width="250" height="153"  alt="video">
+<img title="Selenoid Video" src="images/testVideo.gif" width="250" height="200"  alt="video">
 </p>
